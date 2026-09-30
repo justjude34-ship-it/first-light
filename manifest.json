@@ -1,0 +1,19 @@
+{
+  "name": "First Light",
+  "short_name": "First Light",
+  "description": "A quiet companion for learning sleep again. Local-only. Not therapy.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
