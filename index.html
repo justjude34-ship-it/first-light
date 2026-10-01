@@ -43,99 +43,13 @@ nav button.on{color:#2dd4bf}
     <p>LEARN SLEEP AGAIN</p>
   </div>
 </header>
-
 <div class="page on" id="page-today">
-  <div class="hero" aria-label="Buddha with glowing lotus"><img src="data:image/jpeg;base64,PLACEHOLDER" alt="Buddha with glowing lotus"></div>
+  <div class="hero"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA4KCw0LCQ4NDA0QDw4RFiQXFhQUFiwgIRokNC43NjMuMjI6QVNGOj1OPjIySGJJTlZYXV5dOEVmbWVabFNbXVn/2wBDAQ8QEBYTFioXFypZOzI7WVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVn/wAARCAJMAaQDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAwQAAQIFBv/EAEIQAAIBAwIEAwYFAwMDBQAAAAECAwAEEQUSITFBBhMiUWFxgZEyobEHFEJS0SNiwfAkM3KC8RVDYqLS/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAJBEBAQEAAgICAgIDAQAAAAAAAAERAiEDEjEEQRMiUWEycYH/2Q==" alt="Buddha with glowing lotus"></div>
   <section class="section">
     <div class="eye">A QUIET COURSE</div>
     <h2>Sleep is a <span class="g">skill</span>. You can <span class="g">relearn it</span>.</h2>
     <p class="lede">A local companion using clinic CBT-I methods: a diary, a regular rise time, the bed-as-sleep rule, and a calmer mind at night.</p>
   </section>
 </div>
-
-<div class="page" id="page-diary">
-  <section class="section">
-    <h2>Diary</h2>
-    <p class="lede">One tap. No typing. Use the microphone key on your keyboard for extra notes.</p>
-    <div class="tool"><b>Woke</b>
-      <div class="presets" data-g="wake">
-        <button class="preset" type="button">5am</button>
-        <button class="preset" type="button">6am</button>
-        <button class="preset" type="button">7am</button>
-        <button class="preset" type="button">8am</button>
-        <button class="preset" type="button">9am</button>
-        <button class="preset" type="button">10am+</button>
-      </div>
-    </div>
-    <div class="tool"><b>Slept</b>
-      <div class="presets" data-g="sleep">
-        <button class="preset" type="button">9pm</button>
-        <button class="preset" type="button">10pm</button>
-        <button class="preset" type="button">11pm</button>
-        <button class="preset" type="button">Midnight</button>
-        <button class="preset" type="button">1am</button>
-        <button class="preset" type="button">2am+</button>
-      </div>
-    </div>
-    <div class="tool"><b>Felt</b>
-      <div class="presets" data-g="feel">
-        <button class="preset" type="button">Rested</button>
-        <button class="preset" type="button">Okay</button>
-        <button class="preset" type="button">Rough</button>
-        <button class="preset" type="button">Painful</button>
-      </div>
-    </div>
-    <p class="ok" id="saved">Saved for today.</p>
-  </section>
-</div>
-
-<div class="page" id="page-course">
-  <section class="section">
-    <h2>Course</h2>
-    <p class="lede">The same public methods used in clinic CBT-I: a diary, a regular rise time, the bed-as-sleep rule, and a calmer mind at night. One step at a time.</p>
-  </section>
-</div>
-
-<div class="page" id="page-night">
-  <section class="section">
-    <h2>Night <span class="g">tools</span></h2>
-    <p class="lede">One tool. Then rest. Do not stack.</p>
-    <div class="tool"><b>3am cards</b><span>Cannot start · woke mid-night · woke early</span></div>
-    <div class="tool"><b>Breath</b><span>A paced cycle you can do in a chair</span></div>
-  </section>
-</div>
-
-<div class="page" id="page-path">
-  <section class="section">
-    <h2>Path</h2>
-    <p class="lede">Your rise time is the anchor. Keep it steady, even on weekends. The rest follows.</p>
-  </section>
-</div>
-
-<nav>
-  <button class="on" type="button" data-page="today">Today</button>
-  <button type="button" data-page="diary">Diary</button>
-  <button type="button" data-page="course">Course</button>
-  <button type="button" data-page="night">Night</button>
-  <button type="button" data-page="path">Path</button>
-</nav>
-<script>
-document.querySelectorAll('nav button').forEach(function(b){
-  b.addEventListener('click',function(){
-    document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});
-    b.classList.add('on);
-    document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
-    document.getElementById('page-'+b.getAttribute('data-page')).classList.add('on);
-  });
-});
-document.querySelectorAll('.presets').forEach(function(g){
-  g.addEventListener('click',function(e){
-    var b=e.target.closest('.preset'); if(!b) return;
-    g.querySelectorAll('.preset').forEach(function(x){x.classList.remove('on')});
-    b.classList.add('on);
-    document.getElementById('saved').style.display='block';
-  });
-});
-</script>
 </body>
 </html>
