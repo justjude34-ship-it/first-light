@@ -14,8 +14,8 @@ header{display:flex;align-items:center;gap:12px;padding:16px 20px 8px}
 .brand h1{font-size:22px;font-weight:700}
 .brand h1 span{background:linear-gradient(90deg,#2dd4bf,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brand p{font-size:11px;letter-spacing:2.4px;color:#8e8e93;margin-top:2px}
-.hero{margin:12px 20px 0;border-radius:22px;overflow:hidden;background:#0c1220;min-height:280px;display:flex;align-items:center;justify-content:center}
-.lotus{width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 50% 45%,#fff 0 8%,#5eead4 18%,#22d3ee 38%,#0ea5e9 58%,#1e1b4b 100%);box-shadow:0 0 60px 10px rgba(45,212,191,.35)}
+.hero{margin:12px 20px 0;border-radius:22px;overflow:hidden;background:#0c1220}
+.hero img{width:100%;height:auto;display:block}
 .section{padding:24px 20px 0}
 .eye{font-size:12px;letter-spacing:2.4px;color:#8e8e93;margin-bottom:8px}
 h2{font-size:30px;line-height:1.15;margin-bottom:10px;font-weight:700}
@@ -31,6 +31,8 @@ nav{position:fixed;left:0;right:0;bottom:0;background:rgba(0,0,0,.92);border-top
 nav button{background:0;border:0;color:#8e8e93;font-size:11px}
 nav button.on{color:#2dd4bf}
 .ok{display:none;color:#2dd4bf;font-size:13px;margin-top:8px}
+.page{display:none}
+.page.on{display:block}
 </style>
 </head>
 <body>
@@ -41,71 +43,97 @@ nav button.on{color:#2dd4bf}
     <p>LEARN SLEEP AGAIN</p>
   </div>
 </header>
-<div class="hero" aria-label="Lotus"><div class="lotus" aria-hidden="true"></div></div>
-<section class="section">
-  <div class="eye">A QUIET COURSE</div>
-  <h2>Sleep is a <span class="g">skill</span>. You can <span class="g">relearn it</span>.</h2>
-  <p class="lede">A local companion using clinic CBT-I methods: a diary, a regular rise time, the bed-as-sleep rule, and a calmer mind at night.</p>
-</section>
-<section class="section">
-  <h2>Night <span class="g">tools</span></h2>
-  <p class="lede">One tool. Then rest. Do not stack.</p>
-  <div class="tool"><b>3am cards</b><span>Cannot start · woke mid-night · woke early</span></div>
-  <div class="tool"><b>Breath</b><span>A paced cycle you can do in a chair</span></div>
-</section>
-<section class="section" id="diary">
-  <h2>Diary</h2>
-  <p class="lede">One tap. No typing. Use the microphone key on your keyboard for extra notes.</p>
-  <div class="tool"><b>Woke</b>
-    <div class="presets" data-g="wake">
-      <button class="preset" type="button">5am</button>
-      <button class="preset" type="button">6am</button>
-      <button class="preset" type="button">7am</button>
-      <button class="preset" type="button">8am</button>
-      <button class="preset" type="button">9am</button>
-      <button class="preset" type="button">10am+</button>
+
+<div class="page on" id="page-today">
+  <div class="hero"><img src="data:image/jpeg;base64,PLACEHOLDER" alt="Buddha with glowing lotus"></div>
+  <section class="section">
+    <div class="eye">A QUIET COURSE</div>
+    <h2>Sleep is a <span class="g">skill</span>. You can <span class="g">relearn it</span>.</h2>
+    <p class="lede">A local companion using clinic CBT-I methods: a diary, a regular rise time, the bed-as-sleep rule, and a calmer mind at night.</p>
+  </section>
+</div>
+
+<div class="page" id="page-diary">
+  <section class="section">
+    <h2>Diary</h2>
+    <p class="lede">One tap. No typing. Use the microphone key on your keyboard for extra notes.</p>
+    <div class="tool"><b>Woke</b>
+      <div class="presets" data-g="wake">
+        <button class="preset" type="button">5am</button>
+        <button class="preset" type="button">6am</button>
+        <button class="preset" type="button">7am</button>
+        <button class="preset" type="button">8am</button>
+        <button class="preset" type="button">9am</button>
+        <button class="preset" type="button">10am+</button>
+      </div>
     </div>
-  </div>
-  <div class="tool"><b>Slept</b>
-    <div class="presets" data-g="sleep">
-      <button class="preset" type="button">9pm</button>
-      <button class="preset" type="button">10pm</button>
-      <button class="preset" type="button">11pm</button>
-      <button class="preset" type="button">Midnight</button>
-      <button class="preset" type="button">1am</button>
-      <button class="preset" type="button">2am+</button>
+    <div class="tool"><b>Slept</b>
+      <div class="presets" data-g="sleep">
+        <button class="preset" type="button">9pm</button>
+        <button class="preset" type="button">10pm</button>
+        <button class="preset" type="button">11pm</button>
+        <button class="preset" type="button">Midnight</button>
+        <button class="preset" type="button">1am</button>
+        <button class="preset" type="button">2am+</button>
+      </div>
     </div>
-  </div>
-  <div class="tool"><b>Felt</b>
-    <div class="presets" data-g="feel">
-      <button class="preset" type="button">Rested</button>
-      <button class="preset" type="button">Okay</button>
-      <button class="preset" type="button">Rough</button>
-      <button class="preset" type="button">Painful</button>
+    <div class="tool"><b>Felt</b>
+      <div class="presets" data-g="feel">
+        <button class="preset" type="button">Rested</button>
+        <button class="preset" type="button">Okay</button>
+        <button class="preset" type="button">Rough</button>
+        <button class="preset" type="button">Painful</button>
+      </div>
     </div>
-  </div>
-  <p class="ok" id="saved">Saved for today.</p>
-</section>
+    <p class="ok" id="saved">Saved for today.</p>
+  </section>
+</div>
+
+<div class="page" id="page-course">
+  <section class="section">
+    <h2>Course</h2>
+    <p class="lede">The same public methods used in clinic CBT-I: a diary, a regular rise time, the bed-as-sleep rule, and a calmer mind at night. One step at a time.</p>
+  </section>
+</div>
+
+<div class="page" id="page-night">
+  <section class="section">
+    <h2>Night <span class="g">tools</span></h2>
+    <p class="lede">One tool. Then rest. Do not stack.</p>
+    <div class="tool"><b>3am cards</b><span>Cannot start · woke mid-night · woke early</span></div>
+    <div class="tool"><b>Breath</b><span>A paced cycle you can do in a chair</span></div>
+  </section>
+</div>
+
+<div class="page" id="page-path">
+  <section class="section">
+    <h2>Path</h2>
+    <p class="lede">Your rise time is the anchor. Keep it steady, even on weekends. The rest follows.</p>
+  </section>
+</div>
+
 <nav>
-  <button class="on" type="button">Today</button>
-  <button type="button">Diary</button>
-  <button type="button">Course</button>
-  <button type="button">Night</button>
-  <button type="button">Path</button>
+  <button class="on" type="button" data-page="today">Today</button>
+  <button type="button" data-page="diary">Diary</button>
+  <button type="button" data-page="course">Course</button>
+  <button type="button" data-page="night">Night</button>
+  <button type="button" data-page="path">Path</button>
 </nav>
 <script>
+document.querySelectorAll('nav button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on);
+    document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
+    document.getElementById('page-'+b.getAttribute('data-page')).classList.add('on);
+  });
+});
 document.querySelectorAll('.presets').forEach(function(g){
   g.addEventListener('click',function(e){
     var b=e.target.closest('.preset'); if(!b) return;
     g.querySelectorAll('.preset').forEach(function(x){x.classList.remove('on')});
-    b.classList.add('on');
+    b.classList.add('on);
     document.getElementById('saved').style.display='block';
-  });
-});
-document.querySelectorAll('nav button').forEach(function(b){
-  b.addEventListener('click',function(){
-    document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});
-    b.classList.add('on');
   });
 });
 </script>
