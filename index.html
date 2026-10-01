@@ -1,1 +1,113 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>First Light</title><meta http-equiv="refresh" content="0;url=https://first-light.vercel.app"></head><body><p>First Light is moving to a live page so the hero video can play.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>First Light</title>
+<style>
+:root{--bg:#000;--card:#14141c;--line:#2a2a38;--text:#fff;--muted:#8e8e93;--teal:#2dd4bf;--purple:#c084fc}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;min-height:100%}
+body{padding-bottom:88px}
+header{display:flex;align-items:center;gap:12px;padding:16px 20px 8px}
+.mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#2dd4bf,#c084fc);flex-shrink:0}
+.brand h1{font-size:22px;font-weight:700}
+.brand h1 span{background:linear-gradient(90deg,#2dd4bf,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand p{font-size:11px;letter-spacing:2.4px;color:#8e8e93;margin-top:2px}
+.hero{margin:12px 20px 0;border-radius:22px;overflow:hidden;background:#0c1220;min-height:280px;display:flex;align-items:center;justify-content:center}
+.lotus{width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 50% 45%,#fff 0 8%,#5eead4 18%,#22d3ee 38%,#0ea5e9 58%,#1e1b4b 100%);box-shadow:0 0 60px 10px rgba(45,212,191,.35)}
+.section{padding:24px 20px 0}
+.eye{font-size:12px;letter-spacing:2.4px;color:#8e8e93;margin-bottom:8px}
+h2{font-size:30px;line-height:1.15;margin-bottom:10px;font-weight:700}
+h2 .g{background:linear-gradient(90deg,#c084fc,#2dd4bf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{color:#c7c7cc;font-size:15.5px;line-height:1.55}
+.tool{background:#14141c;border:1px solid #2a2a38;border-radius:16px;padding:16px;margin:10px 0}
+.tool b{display:block;font-size:16px;margin-bottom:4px}
+.tool span{color:#8e8e93;font-size:14px}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.preset{background:#1b1b26;border:1px solid #2a2a38;color:#fff;border-radius:999px;padding:10px 14px;font-size:14px;font-weight:600}
+.preset.on{border-color:#2dd4bf;color:#2dd4bf}
+nav{position:fixed;left:0;right:0;bottom:0;background:rgba(0,0,0,.92);border-top:1px solid #1c1c26;display:flex;justify-content:space-around;padding:10px 4px 22px}
+nav button{background:0;border:0;color:#8e8e93;font-size:11px}
+nav button.on{color:#2dd4bf}
+.ok{display:none;color:#2dd4bf;font-size:13px;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <div class="mark" aria-hidden="true"></div>
+  <div class="brand">
+    <h1>First <span>Light</span></h1>
+    <p>LEARN SLEEP AGAIN</p>
+  </div>
+</header>
+<div class="hero" aria-label="Lotus"><div class="lotus" aria-hidden="true"></div></div>
+<section class="section">
+  <div class="eye">A QUIET COURSE</div>
+  <h2>Sleep is a <span class="g">skill</span>. You can <span class="g">relearn it</span>.</h2>
+  <p class="lede">A local companion using clinic CBT-I methods: a diary, a regular rise time, the bed-as-sleep rule, and a calmer mind at night.</p>
+</section>
+<section class="section">
+  <h2>Night <span class="g">tools</span></h2>
+  <p class="lede">One tool. Then rest. Do not stack.</p>
+  <div class="tool"><b>3am cards</b><span>Cannot start · woke mid-night · woke early</span></div>
+  <div class="tool"><b>Breath</b><span>A paced cycle you can do in a chair</span></div>
+</section>
+<section class="section" id="diary">
+  <h2>Diary</h2>
+  <p class="lede">One tap. No typing. Use the microphone key on your keyboard for extra notes.</p>
+  <div class="tool"><b>Woke</b>
+    <div class="presets" data-g="wake">
+      <button class="preset" type="button">5am</button>
+      <button class="preset" type="button">6am</button>
+      <button class="preset" type="button">7am</button>
+      <button class="preset" type="button">8am</button>
+      <button class="preset" type="button">9am</button>
+      <button class="preset" type="button">10am+</button>
+    </div>
+  </div>
+  <div class="tool"><b>Slept</b>
+    <div class="presets" data-g="sleep">
+      <button class="preset" type="button">9pm</button>
+      <button class="preset" type="button">10pm</button>
+      <button class="preset" type="button">11pm</button>
+      <button class="preset" type="button">Midnight</button>
+      <button class="preset" type="button">1am</button>
+      <button class="preset" type="button">2am+</button>
+    </div>
+  </div>
+  <div class="tool"><b>Felt</b>
+    <div class="presets" data-g="feel">
+      <button class="preset" type="button">Rested</button>
+      <button class="preset" type="button">Okay</button>
+      <button class="preset" type="button">Rough</button>
+      <button class="preset" type="button">Painful</button>
+    </div>
+  </div>
+  <p class="ok" id="saved">Saved for today.</p>
+</section>
+<nav>
+  <button class="on" type="button">Today</button>
+  <button type="button">Diary</button>
+  <button type="button">Course</button>
+  <button type="button">Night</button>
+  <button type="button">Path</button>
+</nav>
+<script>
+document.querySelectorAll('.presets').forEach(function(g){
+  g.addEventListener('click',function(e){
+    var b=e.target.closest('.preset'); if(!b) return;
+    g.querySelectorAll('.preset').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    document.getElementById('saved').style.display='block';
+  });
+});
+document.querySelectorAll('nav button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
